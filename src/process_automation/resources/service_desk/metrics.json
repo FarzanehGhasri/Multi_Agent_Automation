@@ -1,0 +1,63 @@
+{
+  "_comment": "Mock export of the corporate ServiceDesk/Jira analytics API. In production this file is replaced by a real HTTP call; the tool signature stays identical.",
+  "_generated_by": "servicedesk-analytics/mock",
+  "processes": {
+    "SOP-IT-014": {
+      "process_name": "VPN access provisioning for new personnel",
+      "sample_period": "2024-Q4 (140 tickets)",
+      "average_resolution_hours": 42.0,
+      "ticket_volume": 140,
+      "reopened_tickets": 18,
+      "common_errors": [
+        "Wrong remote-access profile selected at intake",
+        "Employee ID missing, ticket bounced back to HR",
+        "Firewall rule typed against the wrong user group"
+      ],
+      "stage_timings": [
+        {"stage": "Request registration", "average_hours": 0.4, "waiting_share": 0.1},
+        {"stage": "Direct manager approval", "average_hours": 34.5, "waiting_share": 0.95},
+        {"stage": "Security policy check", "average_hours": 1.6, "waiting_share": 0.3},
+        {"stage": "Firewall rule provisioning", "average_hours": 4.8, "waiting_share": 0.55},
+        {"stage": "User notification and handover", "average_hours": 0.7, "waiting_share": 0.2}
+      ]
+    },
+    "SOP-SEC-021": {
+      "process_name": "Privileged database access provisioning",
+      "sample_period": "2024-Q4 (85 tickets)",
+      "average_resolution_hours": 26.0,
+      "ticket_volume": 85,
+      "reopened_tickets": 9,
+      "common_errors": [
+        "Business justification too vague, returned by the security officer",
+        "Requested privilege level higher than the peer group baseline",
+        "Expiry date left empty, grant defaulted to permanent"
+      ],
+      "stage_timings": [
+        {"stage": "Request registration", "average_hours": 0.5, "waiting_share": 0.1},
+        {"stage": "Direct manager approval", "average_hours": 3.5, "waiting_share": 0.8},
+        {"stage": "Security officer review", "average_hours": 18.0, "waiting_share": 0.8},
+        {"stage": "DBA privilege grant", "average_hours": 3.2, "waiting_share": 0.45},
+        {"stage": "Audit logging and notification", "average_hours": 0.8, "waiting_share": 0.2}
+      ]
+    },
+    "SOP-IT-008": {
+      "process_name": "Level 2 support ticket handling",
+      "sample_period": "2024-Q4 (320 tickets)",
+      "average_resolution_hours": 11.5,
+      "ticket_volume": 320,
+      "reopened_tickets": 41,
+      "common_errors": [
+        "Level 1 diagnosis notes incomplete at handover",
+        "CMDB record not updated after the configuration change",
+        "Ticket reassigned more than twice before an owner accepted it"
+      ],
+      "stage_timings": [
+        {"stage": "Ticket triage and assignment", "average_hours": 4.2, "waiting_share": 0.9},
+        {"stage": "Level 1 diagnosis handover", "average_hours": 1.3, "waiting_share": 0.5},
+        {"stage": "Level 2 investigation", "average_hours": 3.4, "waiting_share": 0.25},
+        {"stage": "Configuration change in CMDB", "average_hours": 1.9, "waiting_share": 0.3},
+        {"stage": "Customer confirmation", "average_hours": 0.7, "waiting_share": 0.4}
+      ]
+    }
+  }
+}

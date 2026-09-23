@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "process-automation"
+version = "1.0.0"
+description = "Multi-agent system for the analysis and automation of organisational processes (LangGraph + Agentic RAG + Tool Calling + Human-in-the-Loop)"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "langgraph>=0.2",
+    "langchain-core>=0.3",
+]
+
+[project.optional-dependencies]
+# Only needed if you want the Action Plan narrative written by a hosted model.
+llm = ["langchain-openai>=0.2", "langchain-anthropic>=0.2"]
+notebook = ["jupyter", "ipykernel"]
+dev = ["pytest>=7"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+process_automation = ["resources/**/*.md", "resources/**/*.json"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

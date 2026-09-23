@@ -1,0 +1,10 @@
+# Core runtime - everything the notebook needs to run offline.
+langgraph>=0.2
+langchain-core>=0.3
+
+# Optional: only required to have the plan narrative written by a hosted LLM.
+# langchain-openai>=0.2
+# langchain-anthropic>=0.2
+
+# Optional: to execute the notebook itself.
+# jupyter
